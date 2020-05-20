@@ -1,0 +1,4 @@
+# == Class: nagios
+class nagios {
+  
+}
