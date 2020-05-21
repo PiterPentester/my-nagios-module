@@ -17,17 +17,4 @@ class nagios::make_nrpe inherits nagios {
         path => '/usr/bin:/usr/sbin:/bin',
         user => 'root',
     }
-
-    exec { 'make install-xinetd':
-        cwd => '/tmp/nrpe-4.0.3',
-        path => '/usr/bin:/usr/sbin:/bin',
-        user => 'root',
-    }
-
-    exec { 'make install-daemon-config':
-        cwd => '/tmp/nrpe-4.0.3',
-        path => '/usr/bin:/usr/sbin:/bin',
-        user => 'root',
-    }
-
 }
