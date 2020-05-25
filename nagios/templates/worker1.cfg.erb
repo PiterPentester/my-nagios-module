@@ -14,3 +14,24 @@ define service {
         service_description             PING
         check_command                   check_ping!100.0,20%!500.0,60%
 }
+
+define service {
+        use                             generic-service
+        host_name                       worker1
+        service_description             CPU Load
+        check_command                   check_nrpe!check_load
+}
+
+define service {
+        use                             generic-service
+        host_name                       worker1
+        service_description             CHECK USERS
+        check_command                   check_nrpe!check_users
+}
+
+define service {
+        use                             generic-service
+        host_name                       worker1
+        service_description             CHECK TOTAL PROCESSES
+        check_command                   check_nrpe!check_total_procs
+}

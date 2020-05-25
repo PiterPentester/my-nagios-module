@@ -13,12 +13,12 @@ class nagios::get_and_untar_files inherits nagios {
   }
 
 
-  exec { '/usr/bin/wget https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.0.3/nrpe-4.0.3.tar.gz':
+  exec { '/usr/bin/wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-3.2.1.tar.gz':
     cwd => '/tmp',
     user        => 'root',
   }
   exec { 'untar nagios nrpe':
-    command     => '/bin/tar -xzvf /tmp/nrpe-4.0.3.tar.gz -C /tmp',
+    command     => '/bin/tar -xzvf /tmp/nrpe.tar.gz -C /tmp',
     user        => 'root',
   }
 

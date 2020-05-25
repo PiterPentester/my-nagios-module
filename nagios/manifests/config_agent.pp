@@ -7,4 +7,14 @@ class nagios::config_agent inherits nagios {
       mode    => '0644',
       content => template('nagios/nrpe.cfg.erb'),
     }
+
+    exec { "sed -i '/^allowed_hosts=/s/$/,10.25.5.2/' /usr/local/nagios/etc/nrpe.cfg":
+      path => '/usr/bin:/usr/sbin:/bin',
+      user => 'root',
+    }
+
+    exec { "sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg":
+      path => '/usr/bin:/usr/sbin:/bin',
+      user => 'root',
+    }
 }
