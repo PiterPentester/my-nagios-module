@@ -116,6 +116,11 @@ define command {
     command_line    $USER1$/check_mrtgtraf -F $ARG1$ -a $ARG2$ -w $ARG3$ -c $ARG4$ -e $ARG5$
 }
 
+define command {
+
+    command_name    check_local_puppet_port
+    command_line    $USER1$/check_puppet_port.sh
+}
 
 
 ################################################################################
@@ -256,4 +261,3 @@ define command {
         command_name check_nrpe
         command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
 }
-

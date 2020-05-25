@@ -33,4 +33,20 @@ class nagios::config_master inherits nagios {
     content => template('nagios/worker2.cfg.erb'),
   }
 
+  file { '/usr/local/nagios/etc/objects/localhost.cfg':
+    ensure  => file,
+    owner   => 'nagios',
+    group   => 'nagios',
+    mode    => '0644',
+    content => template('nagios/localhost.cfg.erb'),
+  }
+
+  file { '/usr/local/nagios/libexec/check_puppet_port.sh':
+    ensure  => file,
+    owner   => 'nagios',
+    group   => 'nagios',
+    mode    => '0644',
+    content => template('nagios/check_puppet_port.cfg.erb'),
+  }
+
 }
