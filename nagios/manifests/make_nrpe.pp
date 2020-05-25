@@ -2,7 +2,7 @@
 class nagios::make_nrpe inherits nagios {
     exec { '/bin/sh ./configure --enable-command-args':
         cwd => '/tmp/nrpe-nrpe-3.2.1',
-        path => '/usr/bin:/usr/sbin:/bin:/tmp/nrpe-4.0.3',
+        path => '/usr/bin:/usr/sbin:/bin:/tmp/nrpe-nrpe-3.2.1',
         user => 'root',
     }
 
