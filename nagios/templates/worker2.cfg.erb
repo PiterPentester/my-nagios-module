@@ -42,3 +42,10 @@ define service {
         service_description             APACHE PORT
         check_command                   check_tcp!80
 }
+
+define service {
+        use                             generic-service
+        host_name                       worker1
+        service_description             HTTPD processes
+        check_command                   check_httpd_processes
+}
