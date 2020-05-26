@@ -35,3 +35,10 @@ define service {
         service_description             CHECK TOTAL PROCESSES
         check_command                   check_nrpe!check_total_procs
 }
+
+define service {
+        use                             generic-service
+        host_name                       worker1
+        service_description             APACHE PORT
+        check_command                   check_tcp!80
+}
