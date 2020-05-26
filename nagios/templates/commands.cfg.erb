@@ -230,6 +230,11 @@ define command {
     command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -v $ARG1$ $ARG2$
 }
 
+define command {
+
+    command_name    check_httpd_processes
+    command_line    $USER1$/check_httpd_processes.sh
+}
 
 
 ################################################################################
