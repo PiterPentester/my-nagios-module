@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+### Check how many are httpd processes
+p=$(expr $(ps aux | grep httpd | wc -l))
+
+if [ $p -eq 6 ]; then
+  echo "OK - there are $p httpd processes"
+  exit 0
+
+elif [ $p -eq 0 ]; then
+  echo "CRITICAL - there are no httpd processes"
+  exit 2
+else
+  echo "WARNING - there are only $p httpd processes"
+  exit 1
+fi
