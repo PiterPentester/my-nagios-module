@@ -6,6 +6,7 @@ node 'master.puppet.io' {
     include nagios::make_nrpe
     include nagios::config_agent
     include nagios::config_master
+    include nagios::config_commands
     include nagios::nrpe_service
     include nagios::services_master
     include nagios::init_plugins
