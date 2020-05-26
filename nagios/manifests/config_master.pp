@@ -46,7 +46,7 @@ class nagios::config_master inherits nagios {
     owner   => 'nagios',
     group   => 'nagios',
     mode    => '0644',
-    content => template('nagios/check_puppet_port.cfg.erb'),
+    content => template('nagios/check_puppet_port.sh.erb'),
   }
 
   file { '/usr/local/nagios/libexec/check_httpd_processes.sh':
