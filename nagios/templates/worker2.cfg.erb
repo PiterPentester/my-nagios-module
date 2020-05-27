@@ -47,5 +47,5 @@ define service {
         use                             generic-service
         host_name                       worker2
         service_description             HTTPD processes
-        check_command                   check_httpd_processes
+        check_command                   check_nrpe!check_httpd
 }
